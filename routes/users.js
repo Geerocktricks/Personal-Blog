@@ -5,13 +5,21 @@ const config = require('../Models/user')
 
 // Profile
 router.get('/profile', passport.authenticate('jwt', { session: false }), (req, res) => {
-    res.send('Profile page')
+    res.json({ user: req.user});
 });
 
 
 // Dashboard
 router.get('/dashboard', passport.authenticate('jwt', { session: false }), (req, res) => {
-    res.send('dashboard page')
-})
+    res.json({ user: req.user});
+});
+
+
+// Update user
+
+
+// Delete User
+
+// Get single user
 
 module.exports = router;

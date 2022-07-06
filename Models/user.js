@@ -21,6 +21,11 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     }
+    // To add 
+    // profilepic: {
+    //     type: String,
+    //     default: ""
+    // }
 }, { timestamps: true});
 
 const User = mongoose.model('User', UserSchema);

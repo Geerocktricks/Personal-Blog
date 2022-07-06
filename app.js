@@ -5,6 +5,9 @@ const passport = require("passport");
 const mongoose = require("mongoose");
 const session = require('express-session');
 
+// Multer for images upload
+const multer = require('multer');
+
 
 
 const app = express();
@@ -43,6 +46,8 @@ require('./config/passport')(passport);
 // Routes
 app.use('/authenticate', require('./routes/auth'));
 app.use('/users', require('./routes/users'));
+
+app.use('/api/posts', require('./routes/posts'))
 
 
 // Static folder(frontend build)
