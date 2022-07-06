@@ -3,6 +3,9 @@ const path = require("path");
 const cors = require("cors");
 const passport = require("passport");
 const mongoose = require("mongoose");
+const session = require('express-session');
+
+
 
 const app = express();
 
@@ -22,6 +25,20 @@ app.use(cors({
 // Body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+// Express session middleware
+app.use(session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+}));
+
+// passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+// passport config
+require('./config/passport')(passport);
 
 // Routes
 app.use('/authenticate', require('./routes/auth'));
