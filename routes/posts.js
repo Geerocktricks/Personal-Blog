@@ -2,14 +2,11 @@ const router = require("express").Router();
 const User = require('../Models/user');
 const Post = require('../Models/post');
 
-let allPosts = [];
-
 // Create post
 router.post('/', async (req, res) => {
     const newPost = new Post(req.body);
     try {
         const savedPost = await newPost.save();
-        allPosts.push(newPost)
         res.json({ success: true, msg: 'Post created succesfully', user: savedPost})
 
     } catch(err) {
@@ -18,7 +15,25 @@ router.post('/', async (req, res) => {
 })
 
 // Get all posts
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+    const author = req.query.author;
+    const catName = req.query.cat;
+    try {
+        let posts;
+        if(author) {
+            posts = await Post.find({ author })
+        } else if(catName) {
+            posts = await Post.find({ categories: {
+                $in: [catName]
+            }})
+        } else {
+            posts = await Post.find()
+        }
+        res.status(200).json({ success: true, posts})
+
+    } catch(err) {
+        res.status(500).json({ success: false, msg: 'Something went wrong. Can\'t fetch posts!'})
+    }
 })
 
 
