@@ -20,6 +20,23 @@ mongoose.connect(db, { useNewUrlParser: true })
 .then(() => console.log('MongoDB connected...'))
 .catch(err => console.log(err));
 
+
+// Storage for images
+const storage = multer.diskStorage({
+    destination: (req, file, callback) => {
+        callback(null, 'images');
+    },
+    filename: (req, file, callback) => {
+        callback(null, req.body.name)
+    }
+});
+
+// Uploading images
+const upload = multer({ storage: storage });
+app.post('/api/upload', upload.single('file'), (req, res) => {
+    res.status(200).json({ success: true, msg: 'File has been uploaded' })
+})
+
 // CORS middleware
 app.use(cors({
     origin: '*'
