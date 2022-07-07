@@ -47,7 +47,8 @@ require('./config/passport')(passport);
 app.use('/authenticate', require('./routes/auth'));
 app.use('/users', require('./routes/users'));
 
-app.use('/api/posts', require('./routes/posts'))
+app.use('/api/posts', require('./routes/posts'));
+app.use('/api/categories', require('./routes/categories'));
 
 
 // Static folder(frontend build)
