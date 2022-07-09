@@ -19,6 +19,10 @@ import { UsersComponent } from './components/users/users.component';
 import { SingleBlogComponent } from './components/single-blog/single-blog.component';
 import { FavouriteComponent } from './components/favourite/favourite.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { FormsModule } from '@angular/forms';
+import { FlashMessagesModule } from 'flash-messages-angular';
+
+import { ValidateService } from './services/validate.service';
 
 @NgModule({
   declarations: [
@@ -41,9 +45,11 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
-    MatSliderModule
+    MatSliderModule,
+    FormsModule,
+    FlashMessagesModule.forRoot()
   ],
-  providers: [],
+  providers: [ValidateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
