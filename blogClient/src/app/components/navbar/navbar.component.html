@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <ul class="navbar-nav d-none d-lg-flex">
+            <li class="nav-item" [routerLinkActive] = "['active']" [routerLinkActiveOptions] ="{exact: true}">
+              <a class="nav-link active" aria-current="page" href="#">Life</a>
+            </li>
+            <li class="nav-item" [routerLinkActive] = "['active']" [routerLinkActiveOptions] ="{exact: true}">
+                <a class="nav-link active" aria-current="page" href="#">Music</a>
+            </li>
+            <li class="nav-item" [routerLinkActive] = "['active']" [routerLinkActiveOptions] ="{exact: true}">
+                <a class="nav-link active" aria-current="page" href="#">Fashoin</a>
+            </li>
+            <li class="nav-item" [routerLinkActive] = "['active']" [routerLinkActiveOptions] ="{exact: true}">
+                <a class="nav-link active" aria-current="page" href="#">Entertainment</a>
+            </li>
+            <li class="nav-item" [routerLinkActive] = "['active']" [routerLinkActiveOptions] ="{exact: true}">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item" [routerLinkActive] = "['active']" [routerLinkActiveOptions] ="{exact: true}">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ms-auto d-none d-lg-flex">
+            <li class="nav-item" [routerLinkActive] = "['active']" [routerLinkActiveOptions] ="{exact: true}">
+                <a class="nav-link active" aria-current="page" routerLink="/profile">Profile</a>
+            </li>
+            <li class="nav-item" [routerLinkActive] = "['active']" [routerLinkActiveOptions] ="{exact: true}">
+                <a class="nav-link active" aria-current="page" routerLink="/dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item" [routerLinkActive] = "['active']" [routerLinkActiveOptions] ="{exact: true}">
+                <a class="nav-link active" aria-current="page" routerLink="/login">Login</a>
+            </li>
+            <li class="nav-item" [routerLinkActive] = "['active']" [routerLinkActiveOptions] ="{exact: true}">
+                <a class="nav-link active" aria-current="page" routerLink="/register">Register</a>
+            </li>
+            <li class="nav-item" [routerLinkActive] = "['active']" [routerLinkActiveOptions] ="{exact: true}">
+                <a class="nav-link active" aria-current="page" href="#">Logout</a>
+            </li>
+        </ul>
+        <div class="ms-auto">
+            <a role="button" class="p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16" style="color: #fff;">
+                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                </svg>
+            </a>
+            <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16" style="color: #fff;">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+  </nav>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      here
+    </div>
+  </div>

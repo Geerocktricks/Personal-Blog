@@ -1,0 +1,12 @@
+nav {
+    background: rgb(144,0,73);
+    background: linear-gradient(90deg, rgba(144,0,73,1) 0%, rgba(249,8,45,1) 100%);
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    .navbar-nav {
+        display: flex;
+        justify-content: space-between;
+    }
+}
