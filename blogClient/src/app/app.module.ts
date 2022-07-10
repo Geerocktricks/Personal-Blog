@@ -21,8 +21,10 @@ import { FavouriteComponent } from './components/favourite/favourite.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { FormsModule } from '@angular/forms';
 import { FlashMessagesModule } from 'flash-messages-angular';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ValidateService } from './services/validate.service';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -47,9 +49,10 @@ import { ValidateService } from './services/validate.service';
     MatSidenavModule,
     MatSliderModule,
     FormsModule,
+    HttpClientModule,
     FlashMessagesModule.forRoot()
   ],
-  providers: [ValidateService],
+  providers: [ValidateService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
